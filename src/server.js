@@ -12,7 +12,6 @@ import apiRoutes from './api-routes';
 // Components
 import {Layout} from "./components";
 
-
 const app = express();
 app.use(express.static(path.resolve(__dirname, "../dist") ) );
 app.use(express.static(path.resolve(__dirname, '../public')));
@@ -42,14 +41,14 @@ app.get( "/*", ( req, res ) => {
         const reduxState = store.getState();
         const helmetData = Helmet.renderStatic();
 
-        res.writeHead( 200, { "Content-Type": "text/html" } );
-        res.end( htmlTemplate( reactDom, reduxState, helmetData ) );
+        res.writeHead(200, {"Content-Type": "text/html"});
+        res.end(htmlTemplate( reactDom, reduxState, helmetData));
     } );
 } );
 
-app.listen( 2048 );
+app.listen(2048);
 
-function htmlTemplate( reactDom, reduxState, helmetData ) {
+function htmlTemplate(reactDom, reduxState, helmetData) {
     return `
         <!DOCTYPE html>
         <html>

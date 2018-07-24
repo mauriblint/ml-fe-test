@@ -5,11 +5,9 @@ const apiBaseURL = 'https://api.mercadolibre.com/sites/MLA';
 const apiSearchResultsCount = 4;
 
 const searchProducts = (query) => {
-    `${apiBaseURL}/search?q=${query}&limit=${apiSearchResultsCount}`
     return axios.get(`${apiBaseURL}/search?q=${query}&limit=${apiSearchResultsCount}`)
         .then(response => _transformSearchResponse(response.data));
 };
-
 
 function _transformSearchResponse (data) {
     const output = {};
@@ -17,7 +15,6 @@ function _transformSearchResponse (data) {
     output.items = _transformItems(data.results);
     output.categories = _transformCategories(data.filters);
     output.author = { name: 'Mauricio', lastname: 'Blint' };
-
 
     return output;
 }

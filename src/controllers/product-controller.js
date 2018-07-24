@@ -24,7 +24,6 @@ function _transformProductResponse (product, description) {
         currency: product.currency_id,
     };
 
-
     if (product.pictures && product.pictures.length) {
         formattedProduct.picture = product.pictures[0].secure_url;
     }
@@ -33,8 +32,6 @@ function _transformProductResponse (product, description) {
     formattedProduct.free_shipping = product.shipping.free_shipping;
     formattedProduct.sold_quantity = product.sold_quantity;
     formattedProduct.description = description.plain_text;
-
-    // This is out of the scope of the test.
     formattedProduct.permalink = product.permalink;
 
     return formattedProduct;

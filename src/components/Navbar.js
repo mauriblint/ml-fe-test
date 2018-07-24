@@ -7,10 +7,11 @@ const Navbar = (props) => {
         <nav className="navbar navbar-dark bg-brand">
             <div className="container">
                 <Link to="/">
-                <a className="navbar-brand">
-                    <img src="/img/logo.png" alt="logo" title="Mercado Libre" />
-                </a>
+                    <a className="navbar-brand">
+                        <img src="/img/logo.png" alt="logo" title="Mercado Libre" />
+                    </a>
                 </Link>
+
                 <SearchBox navigation={props.navigation} />
             </div>
         </nav>

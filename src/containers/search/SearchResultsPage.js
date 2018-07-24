@@ -5,16 +5,8 @@ import {ProductItem} from "./";
 
 class SearchResultsPage extends React.Component {
 
-    componentDidMount() {
-        let {match} = this.props;
-
-        if ( match.params.q) {
-            //this.props.fetchResults(match.params.q);
-        }
-    }
-
     render() {
-        let {match, results} = this.props;
+        let {results} = this.props;
 
         return (
             <div className="search-page container">
@@ -40,4 +32,4 @@ const mapDispatchToProps = {
     fetchResults,
 };
 
-export default connect( mapStateToProps, mapDispatchToProps )( SearchResultsPage );
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResultsPage);

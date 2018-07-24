@@ -6,13 +6,6 @@ import routes from "../routes";
 
 class Layout extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            title: "Welcome to React SSR!",
-        };
-    }
-
     render() {
         return (
             <div>
